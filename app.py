@@ -3,7 +3,6 @@ import sqlite3
 
 app = Flask(__name__)
 app.secret_key = "secret123"
-create_table()
 
 # ---------------- DATABASE CONNECTION ---------------- #
 
@@ -26,6 +25,7 @@ def init_db():
         password TEXT NOT NULL
     )
     """)
+create_table()
 
     # PRODUCTS TABLE
     conn.execute("""
@@ -190,3 +190,4 @@ def logout():
 if __name__ == "__main__":
 
     app.run(host="0.0.0.0", port=10000)
+
